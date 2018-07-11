@@ -5,7 +5,10 @@
   "keywords": [
     "text",
     "decoration",
-    "prism"
+    "prism",
+    "highlight",
+    "code",
+    "source"
   ],
   "license": "MIT",
   "repository": "hitext/prism",
