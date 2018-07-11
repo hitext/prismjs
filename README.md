@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/hitext/prism.svg?branch=master)](https://travis-ci.org/hitext/prism)
 [![Coverage Status](https://coveralls.io/repos/github/hitext/prism/badge.svg?branch=master)](https://coveralls.io/github/hitext/prism?branch=master)
 
-[HiText](https://github.com/hitext/hitext) wrapper for [Prism.js](https://github.com/PrismJS/prism) wrapper.
+[Prism.js](https://github.com/PrismJS/prism) adapter for [HiText](https://github.com/hitext/hitext).
 
 ## Why?
 
