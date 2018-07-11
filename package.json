@@ -24,9 +24,9 @@
       "github-username": "lahmatiy"
     }
   ],
-  "main": "./index",
+  "main": "./src",
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "eslint src test",
     "lint-and-test": "npm run lint && npm test",
     "test": "mocha",
     "coverage": "istanbul cover _mocha -- -R min",
