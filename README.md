@@ -26,6 +26,43 @@ npm install hitext hitext-prismjs prismjs
 
 ## Usage
 
+In browser:
+
+```html
+<script src="node_modules/prismjs/prism.js"></script>
+<script src="node_modules/hitext/dist/hitext.min.js"></script>
+<script src="node_modules/hitext-prismjs/dist/hitext-prismjs.min.js"></script>
+
+<!-- include additional syntaxes if needed -->
+<script src="node_modules/prismjs/components/prism-jsx.js"></script>
+
+<script>
+    // make extended html printer
+    const printer = hitext.printer.html
+        .fork(hitextPrism.printer.html);
+
+    // usage
+    console.log(
+        hitext.decorate(
+            '<div className={foo}>Hello world!</div>',
+            [hitextPrism('jsx')],
+            printer
+        )
+    );
+
+    // or
+    const preset = hitext()
+        .use(hitextPrism('jsx'))
+        .printer(printer);
+
+    console.log(
+        preset.decorate('<div className={foo}>Hello world!</div>')
+    );
+</script>
+```
+
+In nodejs:
+
 ```js
 const hitext = require('hitext');
 const prism = require('hitext-prismjs');
@@ -33,7 +70,7 @@ const prism = require('hitext-prismjs');
 // include additional syntaxes if needed
 // languages available by default:
 // "markup", "xml", "html", "mathml", "svg", "css", "clike", "javascript", "js"
-require('prismjs/components/prism-typescript');
+require('prismjs/components/prism-jsx');
 
 // make extended html printer
 const printer = hitext.printer.html
@@ -49,12 +86,12 @@ console.log(
 );
 
 // or
-const decorate = hitext()
+const preset = hitext()
     .use(prism('jsx'))
     .printer(printer);
 
 console.log(
-    decorate('<div className={foo}>Hello world!</div>')
+    preset.decorate('<div className={foo}>Hello world!</div>')
 );
 ```
 
