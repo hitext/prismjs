@@ -29,6 +29,8 @@
     "lint": "eslint src test",
     "lint-and-test": "npm run lint && npm test",
     "test": "mocha",
+    "build": "browserify --no-bundle-external --standalone hitextPrismjs src/index.js > dist/hitext-prismjs.js && uglifyjs dist/hitext-prismjs.js --compress --mangle -o dist/hitext-prismjs.min.js",
+    "prepublish": "npm run build",
     "coverage": "istanbul cover _mocha -- -R min",
     "travis": "npm run lint-and-test && npm run coveralls",
     "coveralls": "istanbul cover _mocha --report lcovonly -- -R min && cat ./coverage/lcov.info | coveralls"
@@ -37,12 +39,14 @@
     "prismjs": "^1.15.0"
   },
   "devDependencies": {
+    "browserify": "^16.2.2",
     "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "hitext": "^1.0.0-alpha.2",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "prismjs": "^1.15.0"
+    "prismjs": "^1.15.0",
+    "uglify-es": "^3.3.9"
   },
   "files": [
     "index.js",

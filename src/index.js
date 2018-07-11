@@ -1,4 +1,4 @@
-const { tokenize, languages } = require('prismjs');
+const { tokenize, languages } = global.Prism || require('prismjs');
 
 module.exports = function(lang) {
     return function(source, createRange) {
