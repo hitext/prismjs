@@ -1,6 +1,6 @@
 const assert = require('assert');
 const hitext = require('hitext');
-const prism = require('./index');
+const prism = require('../src');
 
 // make extended html printer
 const prismPrinter = hitext.printer.html
