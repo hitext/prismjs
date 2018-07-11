@@ -1,5 +1,5 @@
 {
-  "name": "hitext-prism",
+  "name": "hitext-prismjs",
   "version": "1.0.0",
   "description": "HiText wrapper for Prism.js",
   "keywords": [
@@ -11,10 +11,10 @@
     "source"
   ],
   "license": "MIT",
-  "repository": "hitext/prism",
-  "homepage": "https://github.com/hitext/prism",
+  "repository": "hitext/prismjs",
+  "homepage": "https://github.com/hitext/prismjs",
   "bugs": {
-    "url": "https://github.com/hitext/prism/issues"
+    "url": "https://github.com/hitext/prismjs/issues"
   },
   "author": "Roman Dvornov <rdvornov@gmail.com> (https://github.com/lahmatiy)",
   "maintainers": [

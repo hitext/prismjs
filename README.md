@@ -1,8 +1,8 @@
-# hitext-prism
+# hitext-prismjs
 
 [![NPM version](https://img.shields.io/npm/v/hitext-prism.svg)](https://www.npmjs.com/package/hitext-prism)
-[![Build Status](https://travis-ci.org/hitext/prism.svg?branch=master)](https://travis-ci.org/hitext/prism)
-[![Coverage Status](https://coveralls.io/repos/github/hitext/prism/badge.svg?branch=master)](https://coveralls.io/github/hitext/prism?branch=master)
+[![Build Status](https://travis-ci.org/hitext/prismjs.svg?branch=master)](https://travis-ci.org/hitext/prismjs)
+[![Coverage Status](https://coveralls.io/repos/github/hitext/prismjs/badge.svg?branch=master)](https://coveralls.io/github/hitext/prismjs?branch=master)
 
 [Prism.js](https://github.com/PrismJS/prism) adapter for [HiText](https://github.com/hitext/hitext).
 
@@ -28,10 +28,12 @@ npm install hitext hitext-prismjs prismjs
 
 ```js
 const hitext = require('hitext');
-const prism = require('prismjs');
+const prism = require('hitext-prismjs');
 
-// include additional syntaxes if needed (js, css and html are available by default)
-require('prismjs/components/prism-jsx');
+// include additional syntaxes if needed
+// languages available by default:
+// "markup", "xml", "html", "mathml", "svg", "css", "clike", "javascript", "js"
+require('prismjs/components/prism-typescript');
 
 // make extended html printer
 const printer = hitext.printer.html
