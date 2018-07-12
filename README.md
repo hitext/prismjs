@@ -1,6 +1,6 @@
 # hitext-prismjs
 
-[![NPM version](https://img.shields.io/npm/v/hitext-prism.svg)](https://www.npmjs.com/package/hitext-prism)
+[![NPM version](https://img.shields.io/npm/v/hitext-prismjs.svg)](https://www.npmjs.com/package/hitext-prismjs)
 [![Build Status](https://travis-ci.org/hitext/prismjs.svg?branch=master)](https://travis-ci.org/hitext/prismjs)
 [![Coverage Status](https://coveralls.io/repos/github/hitext/prismjs/badge.svg?branch=master)](https://coveralls.io/github/hitext/prismjs?branch=master)
 
@@ -32,27 +32,26 @@ In browser:
 <script src="node_modules/prismjs/prism.js"></script>
 <script src="node_modules/hitext/dist/hitext.min.js"></script>
 <script src="node_modules/hitext-prismjs/dist/hitext-prismjs.min.js"></script>
-
 <!-- include additional syntaxes if needed -->
 <script src="node_modules/prismjs/components/prism-jsx.js"></script>
 
 <script>
     // make extended html printer
     const printer = hitext.printer.html
-        .fork(hitextPrism.printer.html);
+        .fork(hitextPrismjs.printer.html);
 
     // usage
     console.log(
         hitext.decorate(
             '<div className={foo}>Hello world!</div>',
-            [hitextPrism('jsx')],
+            [hitextPrismjs('jsx')],
             printer
         )
     );
 
     // or
     const preset = hitext()
-        .use(hitextPrism('jsx'))
+        .use(hitextPrismjs('jsx'))
         .printer(printer);
 
     console.log(
