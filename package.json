@@ -1,13 +1,15 @@
 {
   "name": "hitext-prismjs",
-  "version": "1.0.0",
-  "description": "HiText wrapper for Prism.js",
+  "version": "1.0.1",
+  "description": "Prism.js adapter for HiText",
   "keywords": [
     "text",
-    "decoration",
-    "prism",
-    "highlight",
     "code",
+    "decoration",
+    "highlight",
+    "hitext",
+    "prism",
+    "prismjs",
     "source"
   ],
   "license": "MIT",
