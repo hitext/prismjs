@@ -1,4 +1,4 @@
-## next
+## 1.1.0 (May 14, 2020)
 
 - Reworked for [`hitext@1.0.0-beta.1`](https://github.com/hitext/hitext/releases/tag/v1.0.0-beta.1)
 - Bumped deps
