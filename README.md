@@ -36,26 +36,19 @@ In browser:
 <script src="node_modules/prismjs/components/prism-jsx.js"></script>
 
 <script>
-    // make extended html printer
-    const printer = hitext.printer.html
-        .fork(hitextPrismjs.printer.html);
-
     // usage
     console.log(
-        hitext.decorate(
-            '<div className={foo}>Hello world!</div>',
-            [hitextPrismjs('jsx')],
-            printer
-        )
+        hitext([hitextPrismjs('jsx')], 'html')
+            .print('<div className={foo}>Hello world!</div>')
     );
 
     // or
     const preset = hitext()
         .use(hitextPrismjs('jsx'))
-        .printer(printer);
+        .printer('html');
 
     console.log(
-        preset.decorate('<div className={foo}>Hello world!</div>')
+        preset.print('<div className={foo}>Hello world!</div>')
     );
 </script>
 ```
@@ -71,33 +64,26 @@ const prism = require('hitext-prismjs');
 // "markup", "xml", "html", "mathml", "svg", "css", "clike", "javascript", "js"
 require('prismjs/components/prism-jsx');
 
-// make extended html printer
-const printer = hitext.printer.html
-    .fork(prism.printer.html);
-
 // usage
 console.log(
-    hitext.decorate(
-        '<div className={foo}>Hello world!</div>',
-        [prism('jsx')],
-        printer
-    )
+    hitext([hitextPrismjs('jsx')], 'html')
+        .print('<div className={foo}>Hello world!</div>')
 );
 
 // or
 const preset = hitext()
     .use(prism('jsx'))
-    .printer(printer);
+    .printer('html');
 
 console.log(
-    preset.decorate('<div className={foo}>Hello world!</div>')
+    preset.print('<div className={foo}>Hello world!</div>')
 );
 ```
 
 Output:
 
 ```html
-<div><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script"><span class="token script-punctuation">=</span><span class="token punctuation">{</span>foo<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>Hello world<span class="token operator">!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></div>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script"><span class="token script-punctuation">=</span><span class="token punctuation">{</span>foo<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span>Hello world<span class="token operator">!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 ```
 
 ## License
